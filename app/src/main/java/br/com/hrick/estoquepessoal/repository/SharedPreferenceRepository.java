@@ -29,6 +29,13 @@ public class SharedPreferenceRepository {
         editor.apply();
     }
 
+    public void doLogout() {
+        SharedPreferences sharedPref = context.getApplicationContext().getSharedPreferences(context.getString(R.string.database_shared_name), Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putString(context.getString(R.string.preference_key_user_logged), "");
+        editor.apply();
+    }
+
     public User getUserLogged() throws SQLException {
         SharedPreferences sharedPref = context.getApplicationContext().getSharedPreferences(context.getString(R.string.database_shared_name), Context.MODE_PRIVATE);
         String idUser = sharedPref.getString(context.getString(R.string.preference_key_user_logged), "");

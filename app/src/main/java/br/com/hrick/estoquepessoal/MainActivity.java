@@ -95,6 +95,7 @@ public class MainActivity extends BaseActivity
             intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
             startActivity(intent);
         } else if (id == R.id.nav_exit) {
+            sharedPreferenceRepository.doLogout();
             finish();
         }
 
