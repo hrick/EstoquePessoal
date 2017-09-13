@@ -1,5 +1,6 @@
 package br.com.hrick.estoquepessoal;
 
+import android.content.Intent;
 import android.support.design.widget.TextInputLayout;
 
 import android.os.Bundle;
@@ -80,9 +81,14 @@ public class LoginActivity extends BaseActivity {
                         User userLogin = UserRepository.getInstance().getUser(user,password);
                         if(userLogin != null) {
                             sharedPreferenceRepository.setUserLogged(userLogin);
-                            Toast.makeText(LoginActivity.this, "Logou", Toast.LENGTH_LONG).show();
+//                            Toast.makeText(LoginActivity.this, "Logou", Toast.LENGTH_LONG).show();
                             tilUser.setError(null);
                             tilPassword.setError(null);
+                            Intent intent = new Intent(LoginActivity.this,
+                                    MainActivity.class);
+                            intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                            startActivity(intent);
+                            LoginActivity.this.finish();
                         }else{
                             tilUser.setError(getString(R.string.error_invalid_user_or_password));
                             tilPassword.setError(getString(R.string.error_invalid_user_or_password));

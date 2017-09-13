@@ -21,14 +21,24 @@
         <item name="android:singleLine">true</item>
     </style>
 
-    <!--<style name="ImageViewLogoLogin">-->
-        <!--<item name="android:layout_width">match_parent</item>-->
-        <!--<item name="android:layout_height">@dimen/layout_height_logo_login</item>-->
-        <!--<item name="android:layout_marginTop">@dimen/layout_marginTop_logo_login</item>-->
-        <!--<item name="android:layout_marginBottom">@dimen/layout_marginBottom_logo_login</item>-->
-        <!--<item name="android:gravity">center</item>-->
-        <!--<item name="android:scaleType">centerInside</item>-->
-    <!--</style>-->
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="ImageViewLogo">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/layout_height_logo</item>
+        <item name="android:layout_margin">@dimen/layout_margin_logo</item>
+        <item name="android:gravity">center</item>
+        <item name="android:scaleType">centerInside</item>
+    </style>
 
 
+    <dimen name="layout_height_logo">100dp</dimen>
+    <dimen name="layout_margin_logo">16dp</dimen>
 </resources>

@@ -15,7 +15,7 @@ import br.com.hrick.estoquepessoal.entity.User;
 
 public class SharedPreferenceRepository {
 
-    Activity context;
+    private Context context;
 
     public SharedPreferenceRepository(Activity context) {
         this.context = context;
@@ -23,16 +23,22 @@ public class SharedPreferenceRepository {
     }
 
     public void setUserLogged(User user) {
-        SharedPreferences sharedPref = context.getPreferences(Context.MODE_PRIVATE);
+        SharedPreferences sharedPref = context.getApplicationContext().getSharedPreferences(context.getString(R.string.database_shared_name), Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
         editor.putString(context.getString(R.string.preference_key_user_logged), user.getUser());
         editor.apply();
     }
 
     public User getUserLogged() throws SQLException {
-        SharedPreferences sharedPref = context.getPreferences(Context.MODE_PRIVATE);
+        SharedPreferences sharedPref = context.getApplicationContext().getSharedPreferences(context.getString(R.string.database_shared_name), Context.MODE_PRIVATE);
         String idUser = sharedPref.getString(context.getString(R.string.preference_key_user_logged), "");
         return UserRepository.getInstance().getUserId(idUser);
+
+    }
+
+    public String getUserName() {
+        SharedPreferences sharedPref = context.getApplicationContext().getSharedPreferences(context.getString(R.string.database_shared_name), Context.MODE_PRIVATE);
+        return sharedPref.getString(context.getString(R.string.preference_key_user_logged), "");
 
     }
 }

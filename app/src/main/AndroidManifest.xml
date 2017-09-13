@@ -4,20 +4,14 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
 
-    <!-- To auto-complete the email text field in the login form with the user's emails -->
-    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
-    <uses-permission android:name="android.permission.READ_PROFILE" />
-    <uses-permission android:name="android.permission.READ_CONTACTS" />
-
     <application
-        android:allowBackup="true"
         android:name=".EstoquePessoalApplication"
+        android:allowBackup="true"
         android:fullBackupContent="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"/>
         <activity
             android:name=".LauncherActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
@@ -28,13 +22,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".LoginActivity"
-            android:label="@string/title_activity_login"/>
+            android:label="@string/title_activity_login" />
 
-        <meta-data android:name="com.facebook.sdk.ApplicationId"
-            android:value="@string/facebook_app_id"/>
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".AboutActivity"
+            android:label="@string/title_about"/>
     </application>
 
 </manifest>
