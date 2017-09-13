@@ -1,9 +1,5 @@
-/app
-.iml
 
 /.idea
 
-/EstoquePessoal
-.iml
 
-/local.properties
+local.properties

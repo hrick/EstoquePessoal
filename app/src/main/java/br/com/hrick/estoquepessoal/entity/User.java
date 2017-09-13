@@ -9,10 +9,11 @@ import com.j256.ormlite.field.DatabaseField;
 
 public class User {
 
-    @DatabaseField(generatedId = true)
-    private int id;
+    public static final String USER = "user";
+    public static final String PASSWORD = "password";
+
     @SerializedName("usuario")
-    @DatabaseField(unique = true)
+    @DatabaseField(id = true)
     private String user;
     @SerializedName("senha")
     @DatabaseField()
@@ -33,4 +34,5 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
+
 }

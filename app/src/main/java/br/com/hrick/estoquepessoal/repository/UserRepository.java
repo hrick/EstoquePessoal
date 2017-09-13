@@ -39,4 +39,14 @@ public class UserRepository {
     public void createUser(User user) throws SQLException {
         getHelper().getUserDao().createOrUpdate(user);
     }
+
+    public User getUser(String userName, String password) throws SQLException {
+        return getHelper().getUserDao().queryBuilder()
+                .where().eq(User.USER,userName)
+                .and().eq(User.PASSWORD, password).queryForFirst();
+    }
+
+    public User getUserId(String idUser) throws SQLException {
+        return getHelper().getUserDao().queryForId(idUser);
+    }
 }

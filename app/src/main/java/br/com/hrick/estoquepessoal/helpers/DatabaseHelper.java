@@ -20,7 +20,7 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper implements Closeable
     private static final int DATABASE_VERSION = 1;
     private Context context;
 
-    private Dao<User, Integer> userDao = null;
+    private Dao<User, String> userDao = null;
 
 
     public DatabaseHelper(Context context) {
@@ -60,7 +60,7 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper implements Closeable
         }
     }
 
-    public Dao<User, Integer> getUserDao() {
+    public Dao<User, String> getUserDao() {
         if (null == userDao) {
             try {
                 userDao = getDao(User.class);

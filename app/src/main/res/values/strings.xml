@@ -1,3 +1,25 @@
 <resources>
     <string name="app_name">Estoque Pessoal</string>
+    <string name="warning">Warning</string>
+    <string name="erro_user_create">Error writing user to database</string>
+    <string name="ok">OK</string>
+    <string name="title_activity_login">Sign in</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_user">User</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_login">Login</string>
+    <string name="error_invalid_username">This username is invalid</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="error_user_login">Please input a login</string>
+    <string name="error_password_login">Please input a password</string>
+    <string name="erro_database">Error in database</string>
+    <string name="error_invalid_user_or_password">Invalid user or password</string>
+    <string name="preference_key_user_logged">UserLogged</string>
+
+    <string name="facebook_app_id">346093299172349</string>
+    <string name="fb_login_protocol_scheme">fb346093299172349</string>
+    <string name="action_canceled">Action canceled</string>
+
 </resources>
