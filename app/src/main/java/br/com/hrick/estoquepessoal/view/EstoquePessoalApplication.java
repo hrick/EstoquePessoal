@@ -1,4 +1,4 @@
-package br.com.hrick.estoquepessoal;
+package br.com.hrick.estoquepessoal.view;
 
 import android.app.Application;
 

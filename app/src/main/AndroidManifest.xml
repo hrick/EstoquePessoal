@@ -5,7 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name=".EstoquePessoalApplication"
+        android:name=".view.EstoquePessoalApplication"
         android:allowBackup="true"
         android:fullBackupContent="true"
         android:icon="@mipmap/ic_launcher"
@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".LauncherActivity"
+            android:name=".view.LauncherActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:theme="@style/FullscreenTheme">
             <intent-filter>
@@ -23,7 +23,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".LoginActivity"
+            android:name=".view.LoginActivity"
             android:label="@string/title_activity_login" />
 
         <meta-data
@@ -31,10 +31,10 @@
             android:value="@string/facebook_app_id" />
 
         <activity
-            android:name=".MainActivity"
+            android:name=".view.main.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".AboutActivity"
+        <activity android:name=".view.AboutActivity"
             android:label="@string/title_about"/>
     </application>
 

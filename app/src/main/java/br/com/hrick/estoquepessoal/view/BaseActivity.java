@@ -1,4 +1,4 @@
-package br.com.hrick.estoquepessoal;
+package br.com.hrick.estoquepessoal.view;
 
 import android.app.Activity;
 import android.content.DialogInterface;
@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 
+import br.com.hrick.estoquepessoal.R;
 import br.com.hrick.estoquepessoal.entity.User;
 import rx.Subscriber;
 

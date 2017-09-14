@@ -1,4 +1,4 @@
-package br.com.hrick.estoquepessoal;
+package br.com.hrick.estoquepessoal.view;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,6 +9,7 @@ import android.widget.ImageView;
 
 import java.sql.SQLException;
 
+import br.com.hrick.estoquepessoal.R;
 import br.com.hrick.estoquepessoal.api.UserApi;
 import br.com.hrick.estoquepessoal.entity.User;
 import br.com.hrick.estoquepessoal.exceptions.SqlExceptionCustom;

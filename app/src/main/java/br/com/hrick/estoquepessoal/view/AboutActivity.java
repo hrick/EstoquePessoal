@@ -1,17 +1,12 @@
-package br.com.hrick.estoquepessoal;
+package br.com.hrick.estoquepessoal.view;
 
-import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.Button;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.facebook.login.widget.LoginButton;
-
-import br.com.hrick.estoquepessoal.repository.SharedPreferenceRepository;
+import br.com.hrick.estoquepessoal.BuildConfig;
+import br.com.hrick.estoquepessoal.R;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
