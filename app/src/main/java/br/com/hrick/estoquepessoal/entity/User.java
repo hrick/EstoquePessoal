@@ -13,10 +13,10 @@ public class User {
     public static final String PASSWORD = "password";
 
     @SerializedName("usuario")
-    @DatabaseField(id = true)
+    @DatabaseField(id = true, columnName = USER)
     private String user;
     @SerializedName("senha")
-    @DatabaseField()
+    @DatabaseField(columnName = PASSWORD)
     private String password;
 
     public String getUser() {

@@ -2,6 +2,7 @@
 <resources>
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_margin">16dp</dimen>
+    <dimen name="activity_margin_form">12dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="margin_edit_text">12dp</dimen>
     <dimen name="layout_height_edit_text">45dp</dimen>
@@ -14,5 +15,16 @@
     <dimen name="nav_header_height">160dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="text_margin">16dp</dimen>
+    <dimen name="card_elevation">2dp</dimen>
+    <dimen name="container_card_height">120dp</dimen>
+    <dimen name="icon_circle_plus_layout_dimen">60dp</dimen>
+    <dimen name="margion_card">12dp</dimen>
+    <dimen name="corner_radius_card">4dp</dimen>
+    <dimen name="text_card_size">20sp</dimen>
+    <dimen name="margin_tv_title_card">8dp</dimen>
+    <dimen name="size_title">16sp</dimen>
 
+    <dimen name="layout_height_logo">100dp</dimen>
+    <dimen name="layout_margin_logo">16dp</dimen>
+    <dimen name="button_height">48dp</dimen>
 </resources>
