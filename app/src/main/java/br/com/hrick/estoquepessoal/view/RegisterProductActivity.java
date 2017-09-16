@@ -121,7 +121,7 @@ public class RegisterProductActivity extends BaseActivity implements View.OnClic
             try {
                 product.setName(name);
                 product.setResponsibleNumber(responsibleNumber);
-                product.setBrand(responsibleNumber);
+                product.setBrand(brand);
                 product.setQuantity(quantity);
                 product.setStock(stock);
                 ProductRepository.getInstance().createProduct(product);

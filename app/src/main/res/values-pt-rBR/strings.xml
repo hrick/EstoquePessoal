@@ -22,8 +22,6 @@
     <string name="error_invalid_user_or_password">Usuario ou senha inválida</string>
     <string name="preference_key_user_logged">UserLogged</string>
 
-    <string name="facebook_app_id">346093299172349</string>
-    <string name="fb_login_protocol_scheme">fb346093299172349</string>
     <string name="action_canceled">Ação cancelada</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>

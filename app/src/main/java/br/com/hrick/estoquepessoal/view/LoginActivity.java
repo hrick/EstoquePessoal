@@ -55,6 +55,8 @@ public class LoginActivity extends BaseActivity {
         btFacebook.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
+//                10210412534056088
+//                loginResult.getAccessToken().s\;
                 Toast.makeText(LoginActivity.this, "Logou Face", Toast.LENGTH_LONG).show();
             }
 
@@ -103,6 +105,12 @@ public class LoginActivity extends BaseActivity {
         });
 
 
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        callbackManager.onActivityResult(requestCode,resultCode,data);
     }
 }
 
