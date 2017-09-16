@@ -16,6 +16,7 @@ import br.com.hrick.estoquepessoal.exceptions.SqlExceptionCustom;
 import br.com.hrick.estoquepessoal.repository.SharedPreferenceRepository;
 import br.com.hrick.estoquepessoal.repository.UserRepository;
 import br.com.hrick.estoquepessoal.utils.ApiUtil;
+import br.com.hrick.estoquepessoal.view.main.MainActivity;
 import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;

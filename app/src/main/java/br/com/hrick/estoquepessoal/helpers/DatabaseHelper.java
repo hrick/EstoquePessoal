@@ -12,6 +12,8 @@ import com.j256.ormlite.table.TableUtils;
 import java.io.Closeable;
 import java.sql.SQLException;
 
+import br.com.hrick.estoquepessoal.entity.Product;
+import br.com.hrick.estoquepessoal.entity.Stock;
 import br.com.hrick.estoquepessoal.entity.User;
 
 public class DatabaseHelper extends OrmLiteSqliteOpenHelper implements Closeable {
@@ -21,6 +23,8 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper implements Closeable
     private Context context;
 
     private Dao<User, String> userDao = null;
+    private Dao<Product, Integer> productDao = null;
+    private Dao<Stock, Integer> stockDao = null;
 
 
     public DatabaseHelper(Context context) {
@@ -34,6 +38,8 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper implements Closeable
             Log.i("DatabaseHelper", "onCreate database");
 
             TableUtils.createTable(connectionSource, User.class);
+            TableUtils.createTable(connectionSource, Stock.class);
+            TableUtils.createTable(connectionSource, Product.class);
 
 
         } catch (SQLException e) {
@@ -69,6 +75,26 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper implements Closeable
             }
         }
         return userDao;
+    }
+    public Dao<Stock, Integer> getStockDao() {
+        if (null == stockDao) {
+            try {
+                stockDao = getDao(Stock.class);
+            } catch (java.sql.SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return stockDao;
+    }
+    public Dao<Product, Integer> getProductDao() {
+        if (null == productDao) {
+            try {
+                productDao = getDao(Product.class);
+            } catch (java.sql.SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return productDao;
     }
 
 

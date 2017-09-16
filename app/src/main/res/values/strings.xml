@@ -3,7 +3,10 @@
     <string name="warning">Warning</string>
     <string name="erro_user_create">Error writing user to database</string>
     <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
     <string name="title_activity_login">Sign in</string>
+    <string name="action_yes">Yes</string>
+    <string name="action_no">No</string>
 
     <!-- Strings related to login -->
     <string name="prompt_user">User</string>
@@ -13,13 +16,15 @@
     <string name="error_incorrect_password">This password is incorrect</string>
     <string name="error_field_required">This field is required</string>
     <string name="error_user_login">Please input a login</string>
+    <string name="error_required_field">Required field</string>
     <string name="error_password_login">Please input a password</string>
     <string name="erro_database">Error in database</string>
     <string name="error_invalid_user_or_password">Invalid user or password</string>
     <string name="preference_key_user_logged">UserLogged</string>
 
-    <string name="facebook_app_id">346093299172349</string>
-    <string name="fb_login_protocol_scheme">fb346093299172349</string>
+
+    <string name="facebook_app_id">1768003460163817</string>
+    <string name="fb_login_protocol_scheme">fb1768003460163817</string>
     <string name="action_canceled">Action canceled</string>
     <string name="title_activity_main2">Main2Activity</string>
 
@@ -34,10 +39,29 @@
     <string name="about_text">This application is used to control all types of stock, for example: control of stock of food, stock of tools and among others</string>
     <string name="developer_name">Henrique F. Pereira</string>
     <string name="title_version">Version: %1$s</string>
+    <string name="title_quantity">Quantity: %1$s</string>
     <string name="title_developer">Developer: %1$s</string>
     <string name="promp_name">Name</string>
-    <string name="prompt_responsible_number">Responsible Number</string>
+    <string name="prompt_responsible_number">Responsible Phone Number and DDD</string>
     <string name="add_an_image_to_illustrate">Add an image to illustrate</string>
     <string name="title_register">Register</string>
+    <string name="quantity">Quantity</string>
+    <string name="same_responsible_number_stock">Use the same number as the person in charge of the stock ?</string>
+    <string name="prompt_brand">Brand</string>
+    <string name="call_responsible">Call responsible</string>
+    <string name="register_a_new_product">Register a new Product</string>
+    <string name="title_register_stock">Register stock</string>
+    <string name="title_register_product">Register product</string>
+    <string name="title_products">Products</string>
+    <string name="msg_delete_permanently">Will this item be deleted permanently, do you want to proceed?</string>
+    <string name="msg_permission_call">Allows this app to make calls?</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="prompt_street">Street</string>
+    <string name="prompt_neighborhood">Neighborhood</string>
+    <string name="number_address">Number Address</string>
+    <string name="Wait">Wait...</string>
+    <string name="invalid_adress">Adress not found</string>
+    <string name="title_stock">Stock</string>
+    <string name="location_stock">Location stock</string>
 
 </resources>

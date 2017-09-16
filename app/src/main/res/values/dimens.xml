@@ -27,4 +27,5 @@
     <dimen name="layout_height_logo">100dp</dimen>
     <dimen name="layout_margin_logo">16dp</dimen>
     <dimen name="button_height">48dp</dimen>
+    <dimen name="sub_title_size">16sp</dimen>
 </resources>

@@ -1,0 +1,67 @@
+<resources>
+    <string name="app_name">Estoque Pessoal</string>
+    <string name="warning">Aviso</string>
+    <string name="erro_user_create">Erro ao criar usuario no banco local</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="title_activity_login">Login</string>
+    <string name="action_yes">Sim</string>
+    <string name="action_no">Não</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_user">Usuario</string>
+    <string name="prompt_password">Senha</string>
+    <string name="action_login">Login</string>
+    <string name="error_invalid_username">Usuario invalido</string>
+    <string name="error_incorrect_password">Senha invalidot</string>
+    <string name="error_field_required">Campo obrigatório</string>
+    <string name="error_user_login">Insira um usuario</string>
+    <string name="error_required_field">Campo obrigatóri</string>
+    <string name="error_password_login">Insira um senha</string>
+    <string name="erro_database">Erro no banco de dados</string>
+    <string name="error_invalid_user_or_password">Usuario ou senha inválida</string>
+    <string name="preference_key_user_logged">UserLogged</string>
+
+    <string name="facebook_app_id">346093299172349</string>
+    <string name="fb_login_protocol_scheme">fb346093299172349</string>
+    <string name="action_canceled">Ação cancelada</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Configurações</string>
+    <string name="title_about">Sobre</string>
+    <string name="title_exit">Sair</string>
+    <string name="database_shared_name">estoque_pessoal_shared</string>
+    <string name="description_application_logo">Logo</string>
+    <string name="about_text">Esse aplicativo serve para fazer o controle de todos tipo de estoque, como por exemplo: controle do estoque de alimentação, estoque de ferramentas e entre outro</string>
+    <string name="developer_name">Henrique F. Pereira</string>
+    <string name="title_version">Versão: %1$s</string>
+    <string name="title_quantity">Quantidade: %1$s</string>
+    <string name="title_developer">Desenvolvedor: %1$s</string>
+    <string name="promp_name">Nome</string>
+    <string name="prompt_responsible_number">Número e DDD no responsável</string>
+    <string name="add_an_image_to_illustrate">Adicione uma imagem para ilustrar</string>
+    <string name="title_register">Cadastrar</string>
+    <string name="quantity">Quantidade</string>
+    <string name="same_responsible_number_stock">Usar mesmo número cadastrado no estoque ?</string>
+    <string name="prompt_brand">Marca</string>
+    <string name="call_responsible">Ligar para responsável</string>
+    <string name="register_a_new_product">Cadastre um novo Produto</string>
+    <string name="title_register_stock">Cadastre um estoque</string>
+    <string name="title_register_product">Cadastre um produto</string>
+    <string name="title_products">Produtos</string>
+    <string name="msg_delete_permanently">O item será removido permanentemente, deseja prosseguir? </string>
+    <string name="msg_permission_call">Permite fazer ligações ?</string>
+    <string name="title_activity_maps">Map</string>
+
+
+    <string name="prompt_street">Rua</string>
+    <string name="prompt_neighborhood">Bairro</string>
+    <string name="number_address">Número</string>
+    <string name="Wait">Aguarde...</string>
+    <string name="invalid_adress">Endereço não encontrado</string>
+    <string name="title_stock">Estoque</string>
+    <string name="location_stock">Localização do estoque</string>
+
+</resources>

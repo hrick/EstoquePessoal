@@ -1,88 +1,137 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="br.com.hrick.estoquepessoal.view.RegisterStockActivity">
 
-    <LinearLayout
-        android:id="@+id/llFormStock"
-        android:layout_margin="@dimen/activity_margin_form"
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        tools:context="br.com.hrick.estoquepessoal.view.RegisterStockActivity">
 
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/tilName"
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true">
 
-            <EditText
-                style="@style/EditTextCustom"
-                android:hint="@string/promp_name"
-                android:inputType="textCapSentences" />
-
-        </android.support.design.widget.TextInputLayout>
-
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/tilResponsibleNumber"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <EditText
-                style="@style/EditTextCustom"
-                android:hint="@string/prompt_responsible_number"
-                android:inputType="number" />
-
-        </android.support.design.widget.TextInputLayout>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/activity_margin"
-            android:layout_marginBottom="@dimen/activity_margin"
-            android:textSize="@dimen/size_title"
-            android:text="@string/add_an_image_to_illustrate"/>
-
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/container_card_height">
-
-            <ImageView
-                android:id="@+id/ivStock"
+            <LinearLayout
+                android:id="@+id/llFormStock"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/container_card_height"
-                android:scaleType="centerCrop"
-                android:src="@drawable/alimentos_para_diabeticos" />
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/container_card_height"
-                android:background="@color/blck_overlay" />
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/activity_margin_form"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/button_height">
 
-            <ImageView
-                android:id="@+id/ivPlus"
-                android:layout_gravity="center"
-                android:layout_width="@dimen/icon_circle_plus_layout_dimen"
-                android:layout_height="@dimen/icon_circle_plus_layout_dimen"
-                android:scaleType="centerCrop"
-                android:src="@drawable/ic_circle_plus" />
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/tilName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
-        </FrameLayout>
+                    <EditText
+                        style="@style/EditTextCustom"
+                        android:hint="@string/promp_name"
+                        android:inputType="textCapSentences" />
 
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/tilPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+                </android.support.design.widget.TextInputLayout>
 
-            <EditText
-                style="@style/EditTextCustom"
-                android:hint="@string/prompt_password"
-                android:inputType="textPassword" />
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/tilResponsibleNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
-        </android.support.design.widget.TextInputLayout>
-    </LinearLayout>
-    <Button
-        android:id="@+id/btRegister"
-        style="@style/ButtonRegister" />
-</RelativeLayout>
+                    <EditText
+                        style="@style/EditTextCustom"
+                        android:hint="@string/prompt_responsible_number"
+                        android:inputType="number" />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <!--<TextView-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginBottom="@dimen/activity_margin"-->
+                    <!--android:layout_marginTop="@dimen/activity_margin"-->
+                    <!--android:text="@string/add_an_image_to_illustrate"-->
+                    <!--android:textSize="@dimen/size_title" />-->
+
+                <!--<FrameLayout-->
+                    <!--android:id="@+id/flAddImage"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="@dimen/container_card_height"-->
+                    <!--android:focusable="true"-->
+                    <!--android:focusableInTouchMode="true">-->
+
+                    <!--<ImageView-->
+                        <!--android:id="@+id/ivStock"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="@dimen/container_card_height"-->
+                        <!--android:scaleType="centerCrop"-->
+                        <!--android:src="@drawable/stock_place_holder" />-->
+
+                    <!--<View-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="@dimen/container_card_height"-->
+                        <!--android:background="@color/blck_overlay" />-->
+
+                    <!--<ImageView-->
+                        <!--android:id="@+id/ivPlus"-->
+                        <!--android:layout_width="@dimen/icon_circle_plus_layout_dimen"-->
+                        <!--android:layout_height="@dimen/icon_circle_plus_layout_dimen"-->
+                        <!--android:layout_gravity="center"-->
+                        <!--android:scaleType="centerCrop"-->
+                        <!--android:src="@drawable/ic_circle_plus" />-->
+
+                <!--</FrameLayout>-->
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/tilStreet"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        style="@style/EditTextCustom"
+                        android:hint="@string/prompt_street"
+                        android:inputType="textCapSentences" />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/tilNeighborhood"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        style="@style/EditTextCustom"
+                        android:hint="@string/prompt_neighborhood"
+                        android:inputType="textCapSentences" />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/tilNumberAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        style="@style/EditTextCustom"
+                        android:hint="@string/number_address"
+                        android:inputType="number" />
+
+                </android.support.design.widget.TextInputLayout>
+            </LinearLayout>
+        </ScrollView>
+
+        <Button
+            android:id="@+id/btRegister"
+            style="@style/ButtonRegister" />
+
+
+    </RelativeLayout>
+
+    <include layout="@layout/progress_loading" />
+
+</FrameLayout>

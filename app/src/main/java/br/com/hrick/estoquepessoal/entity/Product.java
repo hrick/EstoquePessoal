@@ -15,6 +15,8 @@ public class Product {
     public static final String QUANTITY = "quantity";
     public static final String NAME = "name";
     public static final String ID = "id";
+    public static final String STOCK = "STOCK";
+    public static final String BRAND = "brand";
 
     @DatabaseField(generatedId = true, columnName = ID)
     private int id;
@@ -24,8 +26,12 @@ public class Product {
     private int quantity;
     @DatabaseField(columnName = RESPONSIBLE_NUMBER)
     private String responsibleNumber;
+    @DatabaseField(columnName = BRAND)
+    private String brand;
     @DatabaseField(columnName = EXPIRATION_DATE)
     private Date expirationDate;
+    @DatabaseField (foreign = true, foreignAutoRefresh = true, columnName = STOCK)
+    private Stock stock;
 
     public int getId() {
         return id;
@@ -65,5 +71,21 @@ public class Product {
 
     public void setExpirationDate(Date expirationDate) {
         this.expirationDate = expirationDate;
+    }
+
+    public Stock getStock() {
+        return stock;
+    }
+
+    public void setStock(Stock stock) {
+        this.stock = stock;
+    }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
     }
 }

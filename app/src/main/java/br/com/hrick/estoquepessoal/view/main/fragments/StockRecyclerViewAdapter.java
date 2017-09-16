@@ -23,7 +23,7 @@ import java.util.List;
 
 public class StockRecyclerViewAdapter extends RecyclerView.Adapter<StockRecyclerViewAdapter.ViewHolder> {
 
-    private final List<Stock> mValues;
+    private List<Stock> mValues;
     private Context context;
     private final OnListFragmentInteractionListener mListener;
 
@@ -44,11 +44,12 @@ public class StockRecyclerViewAdapter extends RecyclerView.Adapter<StockRecycler
     public void onBindViewHolder(final ViewHolder holder, final int position) {
         final Stock mItem = mValues.get(position);
         holder.tvStockName.setText(mValues.get(position).getName());
-        Picasso.with(context).load(new File(mValues.get(position).getPathPicture()))
-                .placeholder(R.drawable.stock_place_holder)
-                .error(R.drawable.stock_place_holder)
-                .into(holder.ivStock);
-
+        if (mValues.get(position).getPathPicture() != null)
+            Picasso.with(context).load(new File(mValues.get(position).getPathPicture()))
+                    .fit().centerCrop()
+                    .placeholder(R.drawable.stock_place_holder)
+                    .error(R.drawable.stock_place_holder)
+                    .into(holder.ivStock);
 
         holder.cardViewStock.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,6 +61,23 @@ public class StockRecyclerViewAdapter extends RecyclerView.Adapter<StockRecycler
                 }
             }
         });
+        holder.cardViewStock.setOnLongClickListener(new View.OnLongClickListener() {
+
+            @Override
+            public boolean onLongClick(View v) {
+                if (null != mListener) {
+                    // Notify the active callbacks interface (the activity, if the
+                    // fragment is attached to one) that an item has been selected.
+                    mListener.onDeleteStockListener(mItem);
+                }
+                return false;
+            }
+        });
+    }
+
+    public void updateListStocks(List<Stock> stocks) {
+        this.mValues = stocks;
+        notifyDataSetChanged();
     }
 
     @Override

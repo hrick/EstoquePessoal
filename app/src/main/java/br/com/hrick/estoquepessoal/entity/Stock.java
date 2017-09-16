@@ -1,5 +1,8 @@
 package br.com.hrick.estoquepessoal.entity;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import com.j256.ormlite.dao.ForeignCollection;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.field.ForeignCollectionField;
@@ -8,7 +11,7 @@ import com.j256.ormlite.field.ForeignCollectionField;
  * Created by henrique.pereira on 14/09/2017.
  */
 
-public class Stock {
+public class Stock  {
 
     public static final String ID = "id";
     public static final String NAME = "name";
@@ -24,9 +27,9 @@ public class Stock {
     @DatabaseField(columnName = RESPONSIBLE_NUMBER)
     private String responsibleNumber;
     @DatabaseField(columnName = LATITUDE)
-    private String locationStockLatitude;
+    private Double locationStockLatitude;
     @DatabaseField(columnName = LONGITUDE)
-    private String locationStocklongitude;
+    private Double locationStocklongitude;
     @DatabaseField(columnName = PATH_PICTURE)
     private String pathPicture;
     @ForeignCollectionField()
@@ -64,21 +67,7 @@ public class Stock {
         this.products = products;
     }
 
-    public String getLocationStockLatitude() {
-        return locationStockLatitude;
-    }
 
-    public void setLocationStockLatitude(String locationStockLatitude) {
-        this.locationStockLatitude = locationStockLatitude;
-    }
-
-    public String getLocationStocklongitude() {
-        return locationStocklongitude;
-    }
-
-    public void setLocationStocklongitude(String locationStocklongitude) {
-        this.locationStocklongitude = locationStocklongitude;
-    }
 
     public String getResponsibleNumber() {
         return responsibleNumber;
@@ -86,5 +75,21 @@ public class Stock {
 
     public void setResponsibleNumber(String responsibleNumber) {
         this.responsibleNumber = responsibleNumber;
+    }
+
+    public Double getLocationStockLatitude() {
+        return locationStockLatitude;
+    }
+
+    public void setLocationStockLatitude(Double locationStockLatitude) {
+        this.locationStockLatitude = locationStockLatitude;
+    }
+
+    public Double getLocationStocklongitude() {
+        return locationStocklongitude;
+    }
+
+    public void setLocationStocklongitude(Double locationStocklongitude) {
+        this.locationStocklongitude = locationStocklongitude;
     }
 }

@@ -26,7 +26,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/container_card_height"
                 android:scaleType="centerCrop"
-                android:src="@drawable/alimentos_para_diabeticos" />
+                android:src="@drawable/stock_place_holder" />
 
             <View
                 android:layout_width="match_parent"

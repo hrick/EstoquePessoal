@@ -22,6 +22,7 @@ import br.com.hrick.estoquepessoal.R;
 import br.com.hrick.estoquepessoal.entity.User;
 import br.com.hrick.estoquepessoal.repository.SharedPreferenceRepository;
 import br.com.hrick.estoquepessoal.repository.UserRepository;
+import br.com.hrick.estoquepessoal.view.main.MainActivity;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
