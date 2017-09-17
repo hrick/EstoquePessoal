@@ -146,6 +146,12 @@ public class LoginActivity extends BaseActivity implements GoogleApiClient.OnCon
                 userLogin.setUser(acct.getEmail());
                 userLogin.setPassword(acct.getId());
             }
+            try {
+                UserRepository.getInstance().createUser(userLogin);
+            } catch (SQLException e) {
+                showWarning(getString(R.string.erro_database));
+            }
+
             userLogged(userLogin);
         } else {
             showWarning(getString(R.string.user_invalid));
