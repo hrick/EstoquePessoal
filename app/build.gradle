@@ -58,11 +58,16 @@ dependencies {
     //picasso
     compile 'com.squareup.picasso:picasso:2.5.2'
     //play-services
-    compile 'com.google.android.gms:play-services-location:10.0.1'
-    compile 'com.google.android.gms:play-services:10.0.1'
-    compile 'com.google.android.gms:play-services-vision:10.0.1'
-    compile 'com.google.android.gms:play-services-drive:10.0.1'
+    compile 'com.google.android.gms:play-services-location:10.2.1'
+    compile 'com.google.android.gms:play-services:10.2.1'
+    compile 'com.google.android.gms:play-services-vision:10.2.1'
+    compile 'com.google.android.gms:play-services-drive:10.2.1'
+    compile 'com.google.android.gms:play-services-auth:10.2.1'
 
+//firebase
+    compile 'com.google.firebase:firebase-crash:10.2.1'
+    compile 'com.google.firebase:firebase-messaging:10.2.1'
+    compile 'com.google.firebase:firebase-database:10.2.1'
     //event bus
     compile 'org.greenrobot:eventbus:3.0.0'
     //butterknife
@@ -80,3 +85,4 @@ dependencies {
     compile 'pub.devrel:easypermissions:1.0.0'
 
 }
+apply plugin: 'com.google.gms.google-services'

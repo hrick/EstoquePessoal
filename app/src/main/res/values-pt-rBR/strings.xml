@@ -3,7 +3,7 @@
     <string name="warning">Aviso</string>
     <string name="erro_user_create">Erro ao criar usuario no banco local</string>
     <string name="ok">OK</string>
-    <string name="cancel">Cancel</string>
+    <string name="cancel">Cancelar</string>
     <string name="title_activity_login">Login</string>
     <string name="action_yes">Sim</string>
     <string name="action_no">Não</string>
@@ -61,5 +61,9 @@
     <string name="invalid_adress">Endereço não encontrado</string>
     <string name="title_stock">Estoque</string>
     <string name="location_stock">Localização do estoque</string>
+    <string name="error_location_share">Não foi possível compartilhar a localização</string>
+    <string name="msg_share">Compartilhar via</string>
+    <string name="title_location">Estoque: %1$s</string>
+    <string name="user_invalid">Usuario invalido</string>
 
 </resources>

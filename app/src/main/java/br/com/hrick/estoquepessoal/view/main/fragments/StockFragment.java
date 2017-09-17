@@ -93,6 +93,7 @@ public class StockFragment extends Fragment {
     public interface OnListFragmentInteractionListener {
         void onListFragmentInteraction(Stock item);
         void onDeleteStockListener(Stock item);
+        void onShareLocationStockListener(Stock item);
 
     }
 }

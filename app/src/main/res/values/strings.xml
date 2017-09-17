@@ -63,5 +63,9 @@
     <string name="invalid_adress">Adress not found</string>
     <string name="title_stock">Stock</string>
     <string name="location_stock">Location stock</string>
+    <string name="error_location_share">Could not share location</string>
+    <string name="msg_share">Share via</string>
+    <string name="title_location">Stock: %1$s</string>
+    <string name="user_invalid">Invalid user</string>
 
 </resources>

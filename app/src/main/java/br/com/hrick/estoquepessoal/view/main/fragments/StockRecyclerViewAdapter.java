@@ -6,6 +6,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -73,6 +74,16 @@ public class StockRecyclerViewAdapter extends RecyclerView.Adapter<StockRecycler
                 return false;
             }
         });
+        holder.ibShare.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (null != mListener) {
+                    // Notify the active callbacks interface (the activity, if the
+                    // fragment is attached to one) that an item has been selected.
+                    mListener.onShareLocationStockListener(mItem);
+                }
+            }
+        });
     }
 
     public void updateListStocks(List<Stock> stocks) {
@@ -90,6 +101,8 @@ public class StockRecyclerViewAdapter extends RecyclerView.Adapter<StockRecycler
         ImageView ivStock;
         @BindView(R.id.tvStockName)
         TextView tvStockName;
+        @BindView(R.id.ibShare)
+        ImageButton ibShare;
         @BindView(R.id.cardViewStock)
         CardView cardViewStock;
 

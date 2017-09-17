@@ -22,8 +22,15 @@
             android:id="@+id/llLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
             android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:layout_height="100dp"
+                android:text="@string/app_name" />
 
             <ImageView
                 android:layout_width="match_parent"
@@ -70,13 +77,12 @@
                 android:textColor="@color/white"
                 android:textStyle="bold" />
 
-            <com.facebook.login.widget.LoginButton
-                android:id="@+id/btFacebook"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="30dp"
-                android:layout_marginTop="30dp" />
+
+            <com.google.android.gms.common.SignInButton
+                android:layout_marginTop="16dp"
+                android:id="@+id/btLoginGoogle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
             <ProgressBar
                 android:id="@+id/pbLogin"

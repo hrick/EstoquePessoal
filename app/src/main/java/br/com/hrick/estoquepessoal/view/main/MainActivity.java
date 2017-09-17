@@ -2,6 +2,7 @@ package br.com.hrick.estoquepessoal.view.main;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
@@ -14,6 +15,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.sql.SQLException;
 
@@ -138,5 +140,18 @@ public class MainActivity extends BaseActivity
                 })
                 .setIcon(android.R.drawable.ic_dialog_alert)
                 .show();
+    }
+
+    @Override
+    public void onShareLocationStockListener(Stock item) {
+        String geoUri = "http://maps.google.com/maps?q=loc:" + item.getLocationStockLatitude() + "," +
+                item.getLocationStocklongitude();
+
+        Intent shareIntent = new Intent();
+        shareIntent.setAction(Intent.ACTION_SEND);
+        shareIntent.setType("text/plain");
+        shareIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, getString(R.string.title_location, item.getName()));
+        shareIntent.putExtra(Intent.EXTRA_TEXT, geoUri);
+        startActivity(Intent.createChooser(shareIntent, getString(R.string.msg_share)));
     }
 }

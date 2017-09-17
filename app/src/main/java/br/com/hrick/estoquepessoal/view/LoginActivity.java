@@ -1,9 +1,11 @@
 package br.com.hrick.estoquepessoal.view;
 
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.design.widget.TextInputLayout;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -15,6 +17,13 @@ import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
+import com.google.android.gms.auth.api.Auth;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.auth.api.signin.GoogleSignInResult;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.SignInButton;
+import com.google.android.gms.common.api.GoogleApiClient;
 
 import java.sql.SQLException;
 
@@ -29,20 +38,21 @@ import butterknife.ButterKnife;
 /**
  * A login screen that offers login via email/password.
  */
-public class LoginActivity extends BaseActivity {
+public class LoginActivity extends BaseActivity implements GoogleApiClient.OnConnectionFailedListener {
 
+    public static final int RC_SIGN_IN = 1234;
     @BindView(R.id.pbLogin)
     ProgressBar pbLogin;
     @BindView(R.id.btLogin)
     Button btLogin;
-    @BindView(R.id.btFacebook)
-    LoginButton btFacebook;
+    @BindView(R.id.btLoginGoogle)
+    SignInButton btLoginGoogle;
     @BindView(R.id.tilUser)
     TextInputLayout tilUser;
     @BindView(R.id.tilPassword)
     TextInputLayout tilPassword;
+    GoogleApiClient mGoogleApiClient;
     SharedPreferenceRepository sharedPreferenceRepository;
-    CallbackManager callbackManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,23 +61,17 @@ public class LoginActivity extends BaseActivity {
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
         UserRepository.init(this);
-        callbackManager = CallbackManager.Factory.create();
-        btFacebook.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestEmail()
+                .build();
+        mGoogleApiClient = new GoogleApiClient.Builder(this)
+                .enableAutoManage(this, this)
+                .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
+                .build();
+        btLoginGoogle.setOnClickListener(new OnClickListener() {
             @Override
-            public void onSuccess(LoginResult loginResult) {
-//                10210412534056088
-//                loginResult.getAccessToken().s\;
-                Toast.makeText(LoginActivity.this, "Logou Face", Toast.LENGTH_LONG).show();
-            }
-
-            @Override
-            public void onCancel() {
-                showWarning(getString(R.string.action_canceled));
-            }
-
-            @Override
-            public void onError(FacebookException error) {
-                showWarning(error.getMessage());
+            public void onClick(View v) {
+                signInGoogle();
             }
         });
 
@@ -107,10 +111,51 @@ public class LoginActivity extends BaseActivity {
 
     }
 
+    private void userLogged(User userLogin){
+        sharedPreferenceRepository.setUserLogged(userLogin);
+        tilUser.setError(null);
+        tilPassword.setError(null);
+        Intent intent = new Intent(LoginActivity.this,
+                MainActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+        startActivity(intent);
+        LoginActivity.this.finish();
+    }
+
+    private void signInGoogle() {
+        Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(mGoogleApiClient);
+        startActivityForResult(signInIntent, RC_SIGN_IN);
+    }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        callbackManager.onActivityResult(requestCode,resultCode,data);
+        if (requestCode == RC_SIGN_IN) {
+            GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
+            handleSignInResult(result);
+        }
+    }
+
+    private void handleSignInResult(GoogleSignInResult result) {
+        Log.d("LoginActivityGoogle", "handleSignInResult:" + result.isSuccess());
+        if (result.isSuccess()) {
+            // Signed in successfully, show authenticated UI.
+            GoogleSignInAccount acct = result.getSignInAccount();
+            User userLogin = new User();
+            if (acct != null){
+                userLogin.setUser(acct.getEmail());
+                userLogin.setPassword(acct.getId());
+            }
+            userLogged(userLogin);
+        } else {
+            showWarning(getString(R.string.user_invalid));
+
+        }
+    }
+
+    @Override
+    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
+        showWarning(connectionResult.getErrorMessage());
     }
 }
 
